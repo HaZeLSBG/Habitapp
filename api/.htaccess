@@ -1,0 +1,2 @@
+# Evita que se listen los archivos de la carpeta api
+Options -Indexes

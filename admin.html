@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111f"><title>HabitApp — Panel Admin</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="css/style.css"></head>
+<body class="dashboard-page">
+<header class="topbar">
+  <a class="brand" href="dashboard.html"><img src="img/logo.png" alt=""> HabitApp <span class="admin-tag">ADMIN</span></a>
+  <div class="user-actions">
+    <a href="dashboard.html" class="ghost-btn">← Mi dashboard</a>
+    <button id="btn-logout" class="ghost-btn">Salir</button>
+  </div>
+</header>
+
+<main class="dashboard-shell">
+  <section class="hero-card admin-hero">
+    <div>
+      <span class="eyebrow">CONTROL TOTAL</span>
+      <h1>Panel de administrador</h1>
+      <p>Gestiona todos los usuarios, sus tareas y hábitos desde un solo lugar.</p>
+    </div>
+    <div class="admin-hero-icon">🛡️</div>
+  </section>
+
+  <section class="stats-grid">
+    <article class="stat-card"><span class="stat-icon users">👥</span><div><span>Usuarios totales</span><strong id="stat-users">—</strong></div></article>
+    <article class="stat-card"><span class="stat-icon check">✓</span><div><span>Tareas + hábitos</span><strong id="stat-activities">—</strong></div></article>
+    <article class="stat-card"><span class="stat-icon star">⭐</span><div><span>XP total repartido</span><strong id="stat-xp">—</strong></div></article>
+  </section>
+
+  <section>
+    <div class="section-heading">
+      <div><span class="eyebrow">DIRECTORIO</span><h2>Usuarios</h2></div>
+      <input type="text" id="search-users" placeholder="Buscar por nombre o correo…" class="admin-search">
+    </div>
+    <div id="users-list" class="admin-users-list"></div>
+  </section>
+</main>
+
+<div id="user-detail-overlay" class="overlay hidden">
+  <div class="overlay-panel">
+    <button id="close-detail" class="ghost-btn close-btn">✕ Cerrar</button>
+    <div id="user-detail-content"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="js/admin.js"></script>
+</body></html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111f"><title>HabitApp — Dashboard</title>
+<link rel="icon" href="img/logo.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+<header class="topbar">
+  <a class="brand" href="dashboard.html"><img src="img/logo.png" alt=""> HabitApp</a>
+  <div class="user-actions">
+    <div class="profile-summary"><img src="img/avatar-default.png" alt="Avatar" class="avatar" id="avatar-display">
+      <div><strong id="name-display">Cargando...</strong><span id="level-mini">Nivel 1</span></div>
+    </div>
+    <a href="admin.html" id="btn-admin" class="ghost-btn hidden">Panel Admin</a>
+    <button id="btn-logout" class="ghost-btn">Salir</button>
+  </div>
+</header>
+
+<main class="dashboard-shell">
+  <section class="hero-card">
+    <div><span class="eyebrow">TU PROGRESO DE HOY</span>
+      <h1>Hola, <span id="hero-name">tú</span>.</h1>
+      <p id="motivation">Convierte tus intenciones en acciones pequeñas y medibles.</p>
+    </div>
+    <div class="level-orb"><div class="orb-inner"><span>NIVEL</span><strong id="level-number">1</strong></div></div>
+  </section>
+
+  <section class="stats-grid">
+    <article class="stat-card"><span class="stat-icon fire">🔥</span><div><span>Mejor racha activa</span><strong id="total-streak">0 días</strong></div></article>
+    <article class="stat-card"><span class="stat-icon star">✦</span><div><span>XP acumulada</span><strong id="total-xp">0 XP</strong></div></article>
+    <article class="stat-card"><span class="stat-icon check">✓</span><div><span>Progreso de hoy</span><strong id="today-progress">0 / 0</strong></div></article>
+  </section>
+
+  <section class="progress-card">
+    <div class="progress-top"><div><span class="eyebrow">SIGUIENTE NIVEL</span><strong id="xp-label">0 / 100 XP</strong></div><span id="xp-percent">0%</span></div>
+    <div class="xp-bar-track large"><div class="xp-bar-fill" id="xp-bar-fill"></div></div>
+  </section>
+
+  <section class="toolbar-card">
+    <div>
+      <span class="eyebrow">ORGANIZA TU DÍA</span>
+      <h2>Tareas y hábitos</h2>
+      <p>Las tareas tienen fecha límite y prioridad. Los hábitos generan rachas mediante su historial diario.</p>
+    </div>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Todo</button>
+      <button class="filter-btn" data-filter="task">Tareas</button>
+      <button class="filter-btn" data-filter="habit">Hábitos</button>
+      <select id="category-filter"><option value="all">Todas las categorías</option></select>
+    </div>
+  </section>
+
+  <section class="content-grid">
+    <div class="habits-column">
+      <div class="section-heading">
+        <div><span class="eyebrow">LISTA CENTRAL</span><h2 id="list-title">Para hoy</h2></div>
+        <span class="date-pill" id="today-label"></span>
+      </div>
+      <div id="activities-list" class="habits-list"></div>
+    </div>
+
+    <aside class="add-card">
+      <div class="add-icon">＋</div><span class="eyebrow">NUEVO ELEMENTO</span>
+      <h2>Planifica y construye constancia.</h2>
+      <p>Define qué quieres hacer, cuándo y con qué prioridad.</p>
+      <form id="form-add-activity">
+        <div class="type-switch">
+          <button type="button" class="type-btn active" data-type="habit">Hábito</button>
+          <button type="button" class="type-btn" data-type="task">Tarea</button>
+        </div>
+        <input type="hidden" id="activity-type" value="habit">
+        <label for="activity-name">Nombre</label>
+        <input type="text" id="activity-name" placeholder="Ej. Tender la cama" maxlength="80" required>
+        <label for="activity-description">Descripción <span class="optional">opcional</span></label>
+        <textarea id="activity-description" placeholder="Un detalle que te ayude a ejecutarlo..." maxlength="180"></textarea>
+        <div class="form-row">
+          <div><label for="activity-category">Categoría</label><select id="activity-category"></select></div>
+          <div><label for="activity-priority">Prioridad</label><select id="activity-priority">
+            <option value="low">Baja</option><option value="medium" selected>Media</option><option value="high">Alta</option>
+          </select></div>
+        </div>
+        <div class="form-row">
+          <div class="field-wide"><label for="activity-date">Fecha límite / inicio</label><input type="date" id="activity-date" required></div>
+          <div id="xp-field"><label for="activity-xp">XP</label><select id="activity-xp"><option value="5">5</option><option value="10" selected>10</option><option value="20">20</option></select></div>
+        </div>
+        <button class="primary-btn" type="submit"><span>Crear</span><span>＋</span></button>
+      </form>
+    </aside>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status"></div>
+<div class="loading-screen" id="loading-screen"><div class="loader"></div><span>Cargando tu progreso...</span></div>
+<script type="module" src="js/dashboard.js"></script>
+</body></html>

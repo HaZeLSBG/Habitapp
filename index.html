@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111f"><meta name="description" content="HabitApp: convierte tus hábitos en progreso visible.">
+<title>HabitApp — Tus hábitos, tu progreso</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+<div class="auth-shell">
+  <section class="auth-visual">
+    <div class="brand large"><img src="img/logo.png" alt=""> HabitApp</div>
+    <div class="visual-copy"><span class="eyebrow">PEQUEÑOS PASOS · GRAN PROGRESO</span><h2>Hazlo hoy.<br><span>Repite mañana.</span></h2><p>Convierte tus hábitos diarios en rachas, XP y progreso que puedes ver.</p></div>
+    <div class="mini-stats"><div><strong>+XP</strong><span>por cada logro</span></div><div><strong>🔥</strong><span>rachas diarias</span></div><div><strong>↑</strong><span>niveles</span></div></div>
+  </section>
+  <main class="auth-panel">
+    <div class="card" id="login-card">
+      <div class="mobile-brand brand"><img src="img/logo.png" alt=""> HabitApp</div>
+      <div class="card-head"><span class="eyebrow" id="login-eyebrow">BIENVENIDO DE VUELTA</span><h1 id="login-title">Entra a tu progreso</h1><p id="login-sub">Continúa donde lo dejaste.</p></div>
+      <div class="role-switch" id="role-switch" role="tablist" aria-label="Tipo de acceso">
+        <button type="button" class="role-btn active" data-role="user" role="tab" aria-selected="true">👤 Usuario</button>
+        <button type="button" class="role-btn" data-role="admin" role="tab" aria-selected="false">🛡️ Administrador</button>
+      </div>
+      <div class="error-box" id="error-box" role="alert"></div>
+      <form id="form-login" novalidate>
+        <label for="login-email">Correo</label><input type="email" id="login-email" autocomplete="email" placeholder="tu@correo.com" required>
+        <div class="field-row"><label for="login-password">Contraseña</label><a href="#" id="forgot-link">¿La olvidaste?</a></div>
+        <div class="password-wrap"><input type="password" id="login-password" autocomplete="current-password" placeholder="Tu contraseña" required><button type="button" class="password-toggle" data-target="login-password" aria-label="Mostrar contraseña">Mostrar</button></div>
+        <button class="primary-btn" type="submit"><span id="login-btn-label">Entrar</span><span>→</span></button>
+      </form>
+      <p class="switch-copy" id="register-copy">¿No tienes cuenta? <a href="#" id="toggle-link">Crear cuenta</a></p>
+    </div>
+    <div class="card hidden" id="register-card">
+      <div class="mobile-brand brand"><img src="img/logo.png" alt=""> HabitApp</div>
+      <div class="card-head"><span class="eyebrow">EMPIEZA DESDE CERO</span><h1>Crea tu cuenta</h1><p>Tu siguiente racha empieza aquí.</p></div>
+      <div class="error-box" id="register-error" role="alert"></div>
+      <form id="form-register" novalidate>
+        <label for="reg-name">Nombre</label><input type="text" id="reg-name" autocomplete="name" placeholder="¿Cómo te llamas?" maxlength="40" required>
+        <label for="reg-email">Correo</label><input type="email" id="reg-email" autocomplete="email" placeholder="tu@correo.com" required>
+        <label for="reg-password">Contraseña</label><div class="password-wrap"><input type="password" id="reg-password" autocomplete="new-password" placeholder="Mínimo 6 caracteres" minlength="6" required><button type="button" class="password-toggle" data-target="reg-password" aria-label="Mostrar contraseña">Mostrar</button></div>
+        <button class="primary-btn" type="submit"><span>Crear mi cuenta</span><span>→</span></button>
+      </form>
+      <p class="switch-copy">¿Ya tienes cuenta? <a href="#" id="back-login">Entrar</a></p>
+    </div>
+    <p class="auth-foot">Tus datos se guardan en tu base de datos MySQL. <span>Hecho para avanzar un día a la vez.</span></p>
+  </main>
+</div>
+<script type="module" src="js/auth.js"></script>
+</body></html>
